@@ -1,0 +1,42 @@
+ 
+<ion-view view-title="Hello FlexChart">
+    <ion-nav-buttons side="right">
+        <a class="button button-icon icon ion-plus" href="#/app/addUser"></a><!-- ui-sref="statename" -->
+    </ion-nav-buttons>
+    <ion-content>
+        <wj-flex-chart control="ctx.chart" binding-x="pName" header="{{title}}" items-source="cv" chart-type="{{chartType}}"  stacking="{{stacking}}">
+            <wj-flex-chart-legend position="Bottom" ></wj-flex-chart-legend>
+            <wj-flex-chart-axis wj-property="axisX" label-angle="{{labelAngle}}"></wj-flex-chart-axis>
+            <wj-flex-chart-axis wj-property="axisY" major-unit="{{majorUnit}}"></wj-flex-chart-axis>
+            <wj-flex-chart-series binding="GP"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="AB"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="R"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="H"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="BA"></wj-flex-chart-series>
+            <wj-flex-chart-series binding="OPS"></wj-flex-chart-series>
+        </wj-flex-chart>
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Stacking?
+                </div>
+                <select ng-model="stacking">
+                    <option value="0">None</option>
+                    <option value="1">Stacked</option>
+                    <option value="2">Stacked100pc</option>
+                </select>
+            </label>
+     
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Chart Title</span>
+                <input control="wijmoFlexGridCtrl" type="text" placeholder="Chart Title" ng-model="title" />
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Major Unit</span>
+                <input control="wijmoFlexGridCtrl" type="text" placeholder="unit Major" ng-model="majorUnit" />
+            </label>
+        </div>      
+    </ion-content>
+</ion-view>
+
+

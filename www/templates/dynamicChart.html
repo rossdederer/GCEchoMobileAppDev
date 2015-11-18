@@ -1,0 +1,17 @@
+<ion-view view-title="Dynamic Charts">
+    <ion-content>
+        <wj-flex-chart items-source="trafficData" chart-type="Area" stacking="Stacked" binding-x="time">
+            <wj-flex-chart-legend position="Bottom"></wj-flex-chart-legend>
+            <wj-flex-chart-axis wj-property="axisX" format="mm:ss"></wj-flex-chart-axis>
+            <wj-flex-chart-series name="Trucks" binding="trucks"></wj-flex-chart-series>
+            <wj-flex-chart-series name="Ships" binding="ships"></wj-flex-chart-series>
+            <wj-flex-chart-series name="Planes" binding="planes"></wj-flex-chart-series>
+        </wj-flex-chart>
+        <div class="button-bar">
+            <button type="button" class="button button-small button-positive" ng-click="setInterval(200)">Slow</button>
+            <button type="button" class="button button-small button-calm" ng-click="setInterval(100)">Medium</button>
+            <button type="button" class="button button-small button-positive" ng-click="setInterval(50)">Fast</button>
+            <button type="button" class="button button-small button-assertive" ng-click="setInterval(0)">Stop</button>
+        </div>
+    </ion-content>
+</ion-view>
